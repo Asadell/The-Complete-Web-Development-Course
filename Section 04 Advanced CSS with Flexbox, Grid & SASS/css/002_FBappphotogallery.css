@@ -1,27 +1,35 @@
-*{
+/* Mengatur box-sizing untuk semua elemen */
+* {
     box-sizing: border-box;
 }
 
-.container{
+/* Mengatur kontainer menjadi kontainer flex dengan pembungkus */
+.container {
     display: flex;
     flex-wrap: wrap;
 }
-.column:nth-child(1){
+
+/* .column:nth-child(1){
     background-color: aqua;
 }
-
 .column:nth-child(2){
     background-color: brown;
 }
-
 .column:nth-child(3){
     background-color: yellow;
 }
-
 .column:nth-child(4){
     background-color: violet;
+} */
+
+/* Mengatur kolom memiliki fleksibilitas yang sama, dengan lebar minimum 300px */
+.column {
+    flex: 1;
+    min-width: 300px;
+    /* width: 25%; */
 }
 
-.column{
-    flex: 1;
+/* Mengatur gambar agar memiliki lebar 100% */
+img {
+    width: 100%;
 }
