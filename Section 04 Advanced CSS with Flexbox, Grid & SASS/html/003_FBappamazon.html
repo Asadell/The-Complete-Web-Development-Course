@@ -11,14 +11,50 @@
     <form action="">
         <div class="container">
             <div class="details">
-                Details amet consectetur adipisicing elit. Facilis, quam.
+                <div class="textfield">
+                    <div class="form-group">
+                        <label for="address">Address:</label>
+                        <input type="text" name="address" id="address" placeholder="Address" size="30px" maxlength="100">
+                    </div>
+                    <div class="form-group">
+                        <label for="postcode">Postcode:</label>
+                        <input type="text" name="postcode" id="postcode" placeholder="Postcode" size="30px" maxlength="100">
+                    </div>
+                    <div class="form-group">
+                        <label for="city">City:</label>
+                        <input type="text" name="city" id="city" placeholder="City" size="30px" maxlength="100">
+                    </div>
+                </div>
+                <div class="shipping">
+                    <div>Choose your shipping method:</div>
+                    <div>
+                        <select name="shipping" id="shipping">
+                            <option value="Free super saver shipping">Free super saver shipping</option>
+                            <option value="Two-Day shipping">Two-Day shipping</option>
+                            <option value="One-Day shipping">One-Day shipping</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="payment">
+                    <div>Choose your payment:</div>
+                    <div>
+                        <label for="">GOPAY<input type="radio" name="gopay" value="gopay"></label>
+                        <label for="">OVO<input type="radio" name="ovo" value="ovo"></label>
+                        <label for="">DANA<input type="radio" name="dana" value="dana"></label>
+                    </div>
+                </div>
+                <div class="checks">
+                    <label for="">Sign me up for email updates <input type="checkbox" name="email update" value="checked"></label>
+                    <label for="">Securely save my payment details <input type="checkbox" name="save payment" value="checked"></label>
+                </div>
             </div>
             <div class="comments">
-                Comments
+                <label for="comments">Comments</label>
+                <textarea name="comments" id="comments" cols="40" rows="4"></textarea>
             </div>
         </div>
         <div class="submit">
-            Submit
+            <button id="submit">Submit</button>
         </div>
     </form>
 </body>
