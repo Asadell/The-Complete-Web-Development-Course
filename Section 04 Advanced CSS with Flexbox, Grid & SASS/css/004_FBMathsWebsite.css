@@ -1,0 +1,204 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font: Arial, Helvetica, Sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+#container{
+    width: 90%;
+    /* border: 1px solid grey; */
+    /* height: 100px; */
+    margin: 0 auto;
+    /* agar footer tetap stick di bawah */
+    flex-direction: column;
+    height: 100vh;
+}
+
+#header{
+    /* height: 100px; */
+    padding: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#brand{
+    /* float: left; */
+    flex: 50%;
+}
+
+h1 a{
+    font-size: 50px;
+    font-weight: 100;
+    color: #861BBF;
+    text-decoration: none;
+}
+
+#searchbox{
+    /* float: right; */
+    flex: 50%;
+    background: linear-gradient(#E4F289,#B7E953);
+    min-width: 400px; /*wajib*/
+    /* height: 50px; */
+    padding: 20px;
+    /* margin-top: 20px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text{
+    float: left;
+    width: 200px;
+    padding: 5px;
+    font-size: 15px;
+    color: #E36A0C;
+    background: #f9fce8 url(images/programmer\,\ computer\ expert\ icon\ copy.jpg) right center no-repeat;
+    border: 5px solid #C8D03E;
+}
+
+.submit{
+    float: right;
+    padding: 5px;
+    font-weight: bold;
+    color: white;
+    background: #A751D6;
+    font-size: 15px;
+}
+
+.clear{
+    clear: both;
+}
+
+#menu{
+    /* height: 70px; */  
+    /*height ini lah yang menyebabkan tidak mau (nge wrap), karena program mengira sudah jadi kolom (karna media) tapi tinggi kolom memenuhi jadi tidak (nge wrap)*/
+    background: linear-gradient(#F8F594, #D5D533);
+    padding: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#menu a{
+    /* float: left; */
+    padding: 0 30px;
+    height: 30px;
+    border-right: 1px solid #5D12E7;
+}
+
+#menu a:last-child{
+    border-right: none;
+}
+
+#menu a{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 17px;
+    color: #5D12E7;
+    line-height: 30px;
+    transition: font-size 0.3s ease;
+}
+
+#menu a:hover, #menu a.active{
+    font-size: 20px;
+    font-weight: bold;
+    color: #B314DB;
+}
+
+@media screen and (max-width: 700px){
+    #menu{ /* properti lainnya akan ter inherits sendiri dari atas */
+        flex-direction: column;
+        align-content: center;
+    }
+    #menu a{
+        border-right: none;
+    }
+}
+
+#introduction{
+    background: linear-gradient(#E5F2BB, #B7E952);
+    padding: 30px;
+    margin: 16px 0;
+}
+
+#introduction h3{
+    font-size: 45px;
+    color: #316901;
+    font-weight: normal;
+}
+
+#introduction p{
+    font-size: 25px;
+    color: #628F19;
+    text-align: justify;
+}
+
+/* sidebars */
+.sidebars{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sidebarWrapper{
+    flex: 50%;
+    padding: 10px;
+}
+
+.sidebar{
+    width: 100%;
+    height: 100%;
+    border: 1px solid #BAF46F;
+    border-radius: 20px;
+    padding: 10px 30px;
+}
+
+.sidebar h3{
+    color: #B314DB;
+    font-size: 30px;
+}
+
+#leftsidebar ul{
+    padding-top: 8px;
+}
+
+#leftsidebar ul li{
+    padding: 3px 0 4px 10px;
+    list-style-image: url(../images/programmer\,\ computer\ expert\ icon\ copy.jpg);
+}
+
+#rightsidebar ul li{
+    padding: 20px 0 20px 70px;
+    background: url(../images/programmer\,\ computer\ expert\ icon\ copy.jpg) no-repeat left center;
+}
+
+.sidebar ul li a{
+    text-decoration: none;
+    font-size: 20px;
+    color: #5D12E7;
+    transition: font-size 0.3s ease;
+}
+
+.sidebar ul li a:hover, .sidebar ul li.active{
+    text-decoration: none;
+    font-size: 23px;
+    color: #B314DB;
+    font-weight: bold;
+}
+
+/* #leftsidebar{
+    float: left;
+}
+#rightsidebar{
+    float: right;
+} */
+
+.footer{
+    height: 60px;
+    background: linear-gradient(#F6F390, #D5D533);
+    padding: 10px 30px;
+    /* margin-top: 15px; */
+    margin-top: auto;
+}
