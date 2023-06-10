@@ -1,0 +1,70 @@
+* {
+    box-sizing: border-box;
+}
+
+/*grid container*/
+.container1{
+    height: 100vh;
+    background-color: #07575B;
+/*    mention nested grids*/
+    display: grid;
+    /* grid-template-rows: repeat(4, 1fr); */
+    grid-template-rows: repeat(4, 110px);
+    /* grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
+    grid-template-columns: repeat(auto-fill, 500px);
+    grid-gap: 5px;
+    padding: 7px;
+
+    /* align item vertical */
+    /* align-items: stretch; default*/
+    /* align-items: center; */
+    /* align-items: end; */
+    /* align-items: center; */
+
+    /* align item horizontal */
+    /* justify-items: stretch; */
+    /* justify-items: end; */
+    /* justify-items: center; */
+
+    /* place-items: align-items justify-items; */
+    /* place-items: horizontal vertikal; */
+    place-items: center center;
+
+
+    /* align whole grid horizontal */
+    /* justify-content: start; */
+    /* justify-content: end; */
+    /* justify-content: center; */
+
+    /* align whole grid verticaly */
+    /* align-content: center; */
+
+    /* place-content: justify-content align-content; */
+    /* place-content: vertical horizontal; */
+    place-content: center center;
+}
+
+/*grid items*/
+div{
+    background-color: #66a5AD;
+    color: aliceblue;
+    text-align: center;
+    font-size: 20px;
+    padding: 5px;
+}
+
+.apple{
+    height: 100px;
+}
+.facebook{
+    height: 50px;
+}
+.microsoft{
+    height: 70px;
+}
+.samsung{
+    height: 40px;
+}
+.google{
+    height: 35px;
+}
