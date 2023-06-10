@@ -1,0 +1,42 @@
+*{
+    box-sizing: border-box;
+}
+
+.container > div{
+    background-color: #66a5ad;
+    color: aliceblue;
+    text-align: center;
+    font-size: 20px;
+    padding: 5px;
+    /* margin: 2px;  lebih bagus pake gap di contair */
+}
+
+.container{
+    background-color: #075758;
+
+    display: grid;
+
+    /* row height */
+    /* grid-template-rows: 30px 30px 30px 30px; */
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+
+    /* column width */
+    /* grid-template-columns: 100px 100px 100px 100px; */
+    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+    /* grid-template-columns: 25% 180px 1fr 1fr; */
+    /* grid-template-columns: repeat(4, 100px); */
+    /* grid-template-columns: repeat(4, 25%); */
+    /* grid-template-columns: repeat(4, 1fr); */
+    /* grid-template-columns: repeat(4, minmax(100px, 1fr)); */
+    /* grid-template-columns: repeat(4, minmax(100px, 1fr)); */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+    /* coba kalo isinya cuma 2 (apus yang laen) */
+    /* grid-template-columns: repeat(auto-fill, minmax(100px, 400px));  */
+    /* grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); */
+    
+
+    grid-gap: 5px; /* deprecated */
+    padding: 7px;
+
+}
