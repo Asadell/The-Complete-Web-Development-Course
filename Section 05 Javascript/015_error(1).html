@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #error{
+            color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <p>Your password should contain at least 6 characters, 1 number and 1 capital letter:</p>
+
+    <p>
+        Enter Password!
+        <br>
+        <input type="password" id="input1">
+    </p>
+    <p>
+        Re-Enter Password!
+        <br>
+        <input type="password" id="input2">
+    </p>
+
+    <button onclick="check()">Kirimm</button>
+
+    <p id="error"></p>
+
+    <script>
+
+        function check(){
+            let pw1 = document.getElementById("input1").value;
+            let pw2 = document.getElementById("input2").value;
+
+            let errorMassange = document.getElementById("error");
+            let errorTOthrow = "";
+
+            try{
+                if(pw1.length < 6){
+                    errorTOthrow += "<br> Password too short";
+                }
+                if(/[A-Z]/g.test(pw1) == false){
+                    errorTOthrow += "<br> Password should include at least one digit.";
+                }
+                if(/\d/g.test(pw1) == false){
+                    errorTOThrow += "<br /> Password should include at least one digit.";
+                }
+                if(pw1 != pw2){
+                    errorTOthrow += "<br> Passwords should match.";
+                }
+                throw errorTOthrow;
+            }catch(err){
+                errorMassange.innerHTML = err;
+            }
+
+        }
+
+    </script>
+
+
+</body>
+</html>

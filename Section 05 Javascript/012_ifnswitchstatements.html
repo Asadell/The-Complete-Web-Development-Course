@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if n switch statements</title>
+</head>
+<body>
+    
+    <p>
+        Speed on the motorway: 
+        <input type="number" id="speed"/>
+        <button onclick="checkSpeed()">Kirim</button>
+    </p>
+
+    <p>
+        your season now
+        <input type="" id="myInput"/>
+        <button onclick="weatherCheck()"> kirimm</button>
+    </p>
+
+    <script>
+
+        function checkSpeed(){
+            let speed = document.getElementById("speed").value;
+
+            if(speed > 70){
+                window.alert("You are going to fast");
+            }else if(speed < 40){
+                window.alert("You are going to slow");
+            }else{
+                alert("Your speed is fineee");
+            }
+        }
+
+        function weatherCheck(){
+            var x = document.getElementById("myInput").value.toLowerCase();
+
+            switch (x){
+                case "summer":
+                    window.alert("It is summer time!");
+                    break;
+                case "winter":
+                    alert("It is winter time!");
+                    break;
+                case "spring":
+                    alert("It is spring time!");
+                    break;
+                case "autumn":
+                    alert("It is autumn time!");
+                    break;
+                default:
+                    window.alert("I do not recognise this");
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>

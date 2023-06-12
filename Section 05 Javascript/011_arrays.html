@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+<body>
+    
+    <p id="myParagraph">Arrays</p>
+
+    <script>
+        // let shoppingListt = new Array ("bread", "eggggs", "milk");
+        let shoppingList = ["bread", "eggs", "milk"];
+
+        function showResult(x){
+            document.getElementById("myParagraph").innerHTML += "<br/>" + x;
+        }
+
+        showResult(shoppingList);
+        // showResult(shoppingListt);
+        
+        shoppingList[1] = "yogurt";
+        showResult(shoppingList);
+        
+        shoppingList[2] = "orange";
+        showResult(shoppingList);
+        
+        delete shoppingList[1];
+        showResult(shoppingList); // jelekkkkkk
+        
+        shoppingList[1] = "yogurt";
+        showResult(shoppingList);
+        
+        shoppingList.splice(1,1);
+        showResult(shoppingList);
+        
+        shoppingList.splice(1,0,"banana","apple");
+        showResult(shoppingList);
+        
+        shoppingList.sort();
+        showResult(shoppingList);
+        
+        shoppingList.reverse();
+        showResult(shoppingList);
+        
+        let myString = 'what is weather like?';
+        // let myArray = myString.split(''); // perhuruf
+        // let myArray = myString.split(' '); // perkata
+        let myArray = myString.split(' ',2); // 2? berapa kata pertama
+
+        showResult(myArray);
+
+    </script>
+
+</body>
+</html>
