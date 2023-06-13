@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>window n screen</title>
+</head>
+<body>
+    <p id="paragraph">
+        javascript
+    </p>
+
+    <script>
+
+        //window.alert("welcome to our page!")
+
+        let isAcceptCookies = window.confirm("please confirm your accept cookies");
+
+        if(isAcceptCookies){
+            window.alert("Yo confirmed you accept cookies.");
+        }else{
+            window.alert("You dont accept accept cookies");
+        }
+
+        let visitor = prompt("Please enter your name.");
+        window.alert("Hi "+ visitor + ",  we wish you a nice exprerience on our page! Don't forget to like us on Facebook!")
+    </script>
+
+</body>
+</html>

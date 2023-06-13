@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Counter</title>
+</head>
+<body>
+    <p id="counter">
+        0
+    </p>
+    <button onclick="clearInterval(myCounter)">berhenti hitung</button>
+    <br><br>
+    <button onclick="clearTimeout(delayWelcomeMessage)">ga ada alert</button>
+
+    <script>
+        let counter = document.getElementById("counter");
+        let x = 0;
+
+        let myCounter = setInterval(function(){
+            x++;
+            counter.innerHTML = x
+        },1000);
+        
+        let delayWelcomeMessage = setTimeout(function(){
+            window.alert("welcome to our page")
+        }, 3000);
+
+
+    </script>
+
+</body>
+</html>
