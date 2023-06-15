@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        respon to event
+    </title>
+    <style>
+        .bluebox {
+            background-color: #3A5795;
+            color: white;
+            height: auto;
+            width: auto;
+        }
+
+        .yellowbox {
+            background-color: rgb(222, 224, 85);
+            height: auto;
+            width: auto;
+        }
+
+        .greenbox {
+            background-color: #31af37;
+            height: auto;
+            width: auto;
+        }
+
+        .great {
+            background-color: #5a3479;
+
+        }
+    </style>
+    <script src="jQuery/jquery-3.7.0.min (1).js"></script>
+</head>
+
+<body>
+    <div class="bluebox" id="facebook">
+        <p>Facebook is <span class="great">great</span>.</p>
+        <p class="orange">p2</p>
+        <p>p1</p>
+    </div>
+    <div class="yellowbox" id="apple">
+        <p>Apple.</p>
+        <ul>
+            <li>bmw</li>
+            <li>audi</li>
+            <li>mercedes</li>
+        </ul>
+        <p><a href="http://www.google.com">This is a link</a></p>
+        <p><a href="http://www.microsoft.com">This is aanother link</a></p>
+    </div>
+    <p id="hadeuh">JS</p>
+    <div class="greenbox">
+        <p>Microsoft.</p>
+        <ul>
+            <li>bmw</li>
+            <li>audi</li>
+            <li>mercedes</li>
+        </ul>
+
+        <table>
+            <tr>
+                <th>
+                    Phone Make
+                </th>
+                <th>
+                    Model
+                </th>
+                <th>
+                    Model
+                </th>
+            </tr>
+
+            <tr>
+                <td>
+                    Apple
+                </td>
+                <td>
+                    Iphone 4
+                </td>
+                <td>
+                    16Go
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Apple
+                </td>
+                <td>
+                    Iphone 4
+                </td>
+                <td>
+                    16Go
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Apple
+                </td>
+                <td>
+                    Iphone 4
+                </td>
+                <td>
+                    16Go
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Apple
+                </td>
+                <td>
+                    Iphone 4
+                </td>
+                <td>
+                    16Go
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Apple
+                </td>
+                <td>
+                    Iphone 4
+                </td>
+                <td>
+                    16Go
+                </td>
+            </tr>
+        </table>
+    </div>
+    <p>Type your name: <input><button type="submit">kirim</button></p>
+
+    <!-- mulai js nya beraksi -->
+    <script>
+
+        $(function () { // block pembuka jQuery
+            
+            $("p").click(function(){
+                // event semua element <p> nya
+                //$("p").css("background-color","rgba(206, 152, 230, 0.697)");
+
+                // event untuk elemnt <p> yang diclick saja
+                // $(this).css("background-color","rgba(206, 152, 230, 0.697)");
+            });
+
+            $("p").mouseover(function(){
+                //$(this).css("background-color","rgba(189, 132, 214, 0.697)");
+            });
+            $("p").mouseout(function(){ 
+                //$(this).css("background-color","");
+            });
+
+            $("input").focus(function(){
+                $(this).css("background","rgba(210, 195, 131, 0.697)");
+            });
+            $("input").blur(function(){
+                $(this).css("background","#fff");
+            });
+            $("input").keyup(function(){
+                $(this).css("background","rgba(39, 190, 162, 0.697)");
+            });
+
+            $("submit").click(function(){
+                $("input").css("background-color", "#fff");
+                $("input").val("");
+                
+            });
+        }); // block penutup jQuery
+
+    </script>
+
+
+
+
+</body>
+
+</html>
