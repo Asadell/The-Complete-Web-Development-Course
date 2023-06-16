@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        change styling
+    </title>
+    <style>
+        .bluebox {
+            background-color: #3A5795;
+            color: white;
+            height: 100px;
+            width: auto;
+        }
+
+        .yellowbox {
+            background-color: rgb(222, 224, 85);
+            height: 100px;
+            width: auto;
+        }
+
+        .greenbox {
+            background-color: #31af37;
+            height: 100px;
+            width: auto;
+        }
+
+        #great {
+            background-color: #5a3479;
+        }
+
+        .sans-serif{
+            font-family: sans-serif;
+        }
+    </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- button -->
+    <button id="changeFacebook">Change Facebook</button>
+    <button id="changeApple">Change Apple</button>
+    <button id="changeMicrosoft">Change Microsoft</button>
+    <button id="showMicrosoft">show Microsoft</button>
+    <button id="changeGreat">Change Great</button>
+    <br>
+
+    <!-- another component -->
+    <div class="bluebox" id="facebook">
+        <p>Facebook is <span id="great">great</span>.</p>
+    </div>
+    <br>
+    <div class="yellowbox sans-serif" id="apple">
+        <p>Apple.</p>
+
+    </div>
+    <br>
+    <div class="greenbox" id="microsoft">
+        <p id="microsoftParagraph">Microsoft.</p>
+        <p><a href="www.microsoft.com" title="microsoft" id="microsoftLink">microsoft Link</a></p>
+    </div>
+    
+    <p>Enter your name: <input type="text"></p>
+
+    <!-- mulai js nya beraksi -->
+    <script>
+        $(function () { // block pembuka jQuery
+            
+            $("#changeFacebook").click(function(){
+                //$("#facebook").css("width", 100*Math.random()-50 + $("#facebook").width());
+                $("#facebook").addClass("greenbox");
+                //window.alert($("facebook").innerHeight);
+                //window.alertalert($("facebook").outerHeight);
+            });
+
+            $("#changeApple").click(function(){
+                $("#apple").removeClass("sans-serif");
+                $("#apple").css("position", "absolute");
+                //$("#apple").css('top': 200*Math.random(),'left':200*Math.random(),...);
+            });
+
+            $("#changeMicrosoft").click(function(){
+                //$("#microsoft").toggleClass("greenbox");
+            });
+
+            $("#microsoft").click(function(){
+                $(this).hide();
+            });
+
+            $("#showMicrosoft").click(function(){
+                $("#microsoft").show();
+            });
+
+            $("#changeGreat").click(function(){
+                $("#great").wrap("<div></div>");
+            });
+        }); // block penutup jQuery
+    </script>
+
+
+
+
+</body>
+
+</html>

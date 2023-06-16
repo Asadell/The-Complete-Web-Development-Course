@@ -31,11 +31,12 @@
 
         }
     </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 </head>
 
 <body>
     <div class="bluebox" id="facebook">
-        <p>Facebook is<span id="great">great</span>.</p>
+        <p>Facebook is <span id="great">great</span>.</p>
 
     </div>
     <div class="yellowbox" id="apple">
@@ -47,7 +48,13 @@
     </div>
 
     <!-- mulai js nya beraksi -->
+    <script>
+        $(function(){ // block pembuka jQuery
 
+
+
+        }); // block penutup jQuery
+    </script>
 
 
 
