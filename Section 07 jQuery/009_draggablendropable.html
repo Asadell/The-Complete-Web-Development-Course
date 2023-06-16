@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        draggable n dropable
+    </title>
+    <style>
+        .bluebox {
+            background-color: #3A5795;
+            color: white;
+            height: 100px;
+            width: auto;
+        }
+
+        .yellowbox {
+            background-color: rgb(222, 224, 85);
+            height: 100px;
+            width: auto;
+        }
+
+        .greenbox {
+            background-color: #31af37;
+            height: 100px;
+            width: auto;
+        }
+
+        #great {
+            background-color: #5a3479;
+        }
+
+        #droppable{
+            background-color: #5a3479;
+            height: 300px;
+            width: auto;
+            color: white;
+        }
+    </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/blitzer/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+</head>
+
+<body>
+    <!-- another component -->
+    <div class="bluebox ui-corner-all" id="facebook">
+        <p>Facebook is <span id="great">great</span>.</p>
+    </div>
+    <br>
+    <div class="yellowbox ui-corner-all" id="apple">
+        <ul id="list">
+            <li>eggs</li>
+            <li>milk</li>
+            <li>bread</li>
+        </ul>
+
+    </div>
+    <br>
+    <div class="greenbox ui-corner-all" id="microsoft">
+        <p id="microsoftParagraph">Microsoft.</p>
+        <p><a href="www.microsoft.com" title="microsoft" id="microsoftLink">microsoft Link</a></p>
+    </div>
+    <br>
+    <div id="droppable" class="ui-corner-all">
+        <p>you can drop things here</p>
+    </div>
+    
+    
+    <!-- mulai js nya beraksi -->
+    <script>
+        $(function () { // block pembuka jQuery
+            let message =["Please!", "Drop me!", "Come on!"];
+
+            $("#facebook").draggable();
+            $("#apple").draggable({
+                axis: "y" // jadi cuma bisa atas bawah, ga bisa kanan kiri
+            });
+            
+            $("#microsoft").draggable({
+                revert: true,
+                start:function(){
+                    $("#facebook").css("background-color","#43C8D4");
+                },
+                drag:function(){
+                    $("#microsoft").css("background-color",'rgb(' + Math.floor(256*Math.random()) + ',' 
+                    + Math.floor(256*Math.random())  + ',' 
+                    + Math.floor(256*Math.random())  + ',' 
+                    + ')' );
+                    $("#microsoft").find("p").html(message[Math.floor(4*Math.random())]);
+                },
+                stop:function(){
+                    $("#apple").css("background-color","#B6E219");
+                    $("#microsoft").html("<p>finally</p>");
+                }
+            });
+
+            $("#droppable").droppable({
+                //drop: function(){$(this).css("background-color", "#21DD85");},
+                //accept:"#facebook" // selain facebook ga bakal berubah warna
+
+                drop:function(event,ui){
+                    $(this).css("background-color", "#21DD85");
+                    $(this).find("p").remove();
+                    $("<div></div>").text(ui.draggable.text()).appendTo(this);
+                },
+
+                accept: "#list li"
+            });
+
+            $("#list").find("li").draggable({
+                helper:"clone", // jadi pas didrag, clonenya yg keambil
+                appendTo:"body",
+                //appendTo:"p" // bakal muncul dibawah semua yang berelement p
+            });
+
+        }); // block penutup jQuery
+    </script>
+
+
+
+
+</body>
+
+</html>
