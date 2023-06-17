@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>
-        Auto Complete
+        Title
     </title>
     <style>
         .bluebox {
@@ -29,27 +29,17 @@
         #great {
             background-color: #5a3479;
         }
-
-        .ui-autocomplete{
-            max-height: 100px;
-            overflow-y: auto;
-            overflow-x: auto;
-            max-width: 200px;
-        }
-        #city{
-            width: 200px;                  
-        }
     </style>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/sunny/jquery-ui.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
 </head>
 
 <body>
     <!-- another component -->
     <div class="bluebox ui-corner-all" id="facebook">
-        <p>Facebook is <span id="great">great</span>.</p>
-        <p>Enter your city: <input type="text" id="city"></p>
+        <p>Flight Departure Date_<input type="text" id="departure"></p>
+        <p>Flight Return Date ___<input type="text" id="return"></p>
     </div>
     <br>
     <div class="yellowbox ui-corner-all" id="apple">
@@ -58,16 +48,36 @@
     <br>
     <div class="greenbox ui-corner-all" id="microsoft">
         <p id="microsoftParagraph">Microsoft.</p>
-        <p><a href="www.microsoft.com" title="microsoft" id="microsoftLink">microsoft Link</a></p>
     </div>
     
     
     <!-- mulai js nya beraksi -->
     <script>
         $(function () { // block pembuka jQuery
-            
-            $("#city").autocomplete({
-                source: ["Jakarta", "Surabaya", "Bandung", "Medan", "Semarang", "Makassar", "Palembang", "Tangerang", "Depok", "Batam", "Bekasi", "Pekanbaru", "Bandar Lampung", "Malang", "Padang", "Denpasar", "Samarinda", "Bogor", "Mataram", "Pontianak"]
+
+            $("#departure").datepicker({
+                showAnim: "fadeIn",
+                changeYear: true,
+                numberOfMonths: 1, // mau nampilin berapa bulan sekaligus?
+                //dateFormat: "mm/dd/yy", // default 12/02/2004
+                //dateFormat: "m/d/y", // 12/2/04
+                //dateFormat: "M/d/yy", // Dec/2/2004
+                //dateFormat: "M/DD/y" // Dec/Thursday/04
+                dateFormat: "d M, y",
+                showOn: "button",
+                //buttonImage: "", // isii
+                buttonImageOnly: true,
+                buttonText: "Choose your departure date.",
+                minDate: +1,
+                maxDate: "+12M +10D",
+                onClose: function(selectedDate){
+                    $("#return").datepicker("option", "minDate", selectedDate);
+                },
+                showWeek: true,
+            });
+
+            $("#return").datepicker({
+                dateFormat: "d M, y",
             });
 
         }); // block penutup jQuery

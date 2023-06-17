@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        Button
+    </title>
+    <style>
+        .bluebox {
+            background-color: #3A5795;
+            color: white;
+            height: 100px;
+            width: auto;
+        }
+
+        .yellowbox {
+            background-color: rgb(222, 224, 85);
+            height: 100px;
+            width: auto;
+        }
+
+        .greenbox {
+            background-color: #31af37;
+            height: 100px;
+            width: auto;
+        }
+
+        #great {
+            background-color: #5a3479;
+        }
+
+        #checkboxes{
+            margin: 10px;
+        }
+    </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/blitzer/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+</head>
+
+<body>
+    <!-- another component -->
+    <div class="bluebox ui-corner-all" id="facebook">
+        <div id="checkboxes">
+            <input type="checkbox" id="myCheckBox1">
+            <label for="myCheckBox1">Audi</label>
+            <input type="checkbox" id="myCheckBox2">
+            <label for="myCheckBox2">BMW</label>
+            <input type="checkbox" id="myCheckBox3">
+            <label for="myCheckBox3">Mercedes</label>
+        </div>
+    </div>
+    <br>
+    <div class="yellowbox ui-corner-all" id="apple">
+        <input type="checkbox" id="myCheckBox">
+        <label for="myCheckBox">Checkbox</label>
+    </div>
+    <br>
+    <div class="greenbox ui-corner-all" id="microsoft">
+        <form>
+            <div id="radioBoxes">
+                <input type="radio" id="radioBox1" name="radioBoxess">
+                <label for="radioBox1">Ford</label>
+                <input type="radio" id="radioBox2" name="radioBoxess">
+                <label for="radioBox2">Audi</label>
+                <input type="radio" id="radioBox3" name="radioBoxess">
+                <label for="radioBox3">BMW</label>
+            </div>
+        </form>
+    </div>
+    <button id="button1">button 1</button>
+    <button id="button2">button 2</button>
+    <button id="button3">button 3</button>
+    
+    <!-- mulai js nya beraksi -->
+    <script>
+        $(function () { // block pembuka jQuery
+            
+            $("#button1").button();
+            $("#button2").button({
+                icons:{
+                    primary:"ui-icon-mail-open"
+                },
+                text: false
+            });
+
+            $("#button3").button({
+                icons:{
+                    primary:"ui-icon-mail-closed",
+                    secondary:"ui-icon-carat-1-e" // kok gabisa
+                }
+            });
+
+            $("#myCheckBox").button(); // untuk di kuning (check box)
+            $("#checkboxes").buttonset(); // untuk di biru
+            $("#radioBoxes").buttonset(); // untuk di hijau (radio button)
+        }); // block penutup jQuery
+    </script>
+
+
+
+
+</body>
+
+</html>

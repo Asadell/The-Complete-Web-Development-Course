@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        Dialog
+    </title>
+    <style>
+        .bluebox {
+            background-color: #3A5795;
+            color: white;
+            height: 100px;
+            width: auto;
+        }
+
+        .yellowbox {
+            background-color: rgb(222, 224, 85);
+            height: 100px;
+            width: auto;
+        }
+
+        .greenbox {
+            background-color: #31af37;
+            height: 100px;
+            width: auto;
+        }
+
+        #great {
+            background-color: #5a3479;
+        }
+    </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/start/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+</head>
+
+<body>
+    <!-- another component -->
+    <div class="bluebox ui-corner-all" id="facebook">
+        <p>Facebook is <span id="great">great</span>.</p>
+    </div>
+    <br>
+    <div class="yellowbox ui-corner-all" id="apple">
+        <p>Apple</p>
+    </div>
+    <br>
+    <div class="greenbox ui-corner-all" id="microsoft">
+        <p id="microsoftParagraph">Microsoft.</p>
+    </div>
+
+    <div id="myDialog" title="this is a dialog">
+        <p><span class="ui-icon ui-icon-aler" style="float:left"></span>Welcome to our page.</p>
+    </div>
+
+    <div id="confirmation" title="Leave the page">
+        <p><span class="ui-icon ui-icon-aler" style="float:left"></span>you will lose all unsaved work. Are your sure?
+        </p>
+    </div>
+
+    <button id="open">Open Dialog</button>
+    <button id="goToPreviousPage">Go to previous page</button>
+
+    <!-- mulai js nya beraksi -->
+    <script>
+        $(function () { // block pembuka jQuery
+
+            $("#myDialog").dialog({
+                autoOpen: false
+            });
+            $("#open").click(function () {
+                $("#myDialog").dialog("open");
+            });
+
+            $("button").button(); // perbagus tampilan aja
+
+            $("#confirmation").dialog({
+                autoOpen: false,
+                modal: true,
+                buttons: {
+                    "Go to previous page": function () {
+                        window.history.back();
+                    },
+                    Cancel: function () {
+                        $(this).dialog("close");
+                    }
+                }
+            });
+
+            $("#goToPreviousPage").click(function () {
+                $("#confirmation").dialog("open");
+            });
+
+
+        }); // block penutup jQuery
+    </script>
+
+
+
+
+</body>
+
+</html>
