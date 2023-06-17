@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        Slider
+    </title>
+    <style>
+        .bluebox {
+            background-color: #3A5795;
+            color: white;
+            height: 100px;
+            width: auto;
+        }
+
+        .yellowbox {
+            background-color: rgb(222, 224, 85);
+            height: 100px;
+            width: auto;
+        }
+
+        .greenbox {
+            background-color: #31af37;
+            height: 100px;
+            width: auto;
+        }
+
+        #great {
+            background-color: #5a3479;
+        }
+
+        #sliderValue, #rangeSliderValue{
+            color: #2074CF;
+            border: 0;
+            font-weight: bold;
+        }
+    </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/start/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+</head>
+
+<body>
+    <!-- another component -->
+    <div class="bluebox ui-corner-all" id="facebook">
+        <p>Facebook is <span id="great">great</span>.</p>
+    </div>
+    <br>
+    <div class="yellowbox ui-corner-all" id="apple">
+        <p>Apple</p>
+    </div>
+    <br>
+    <div class="greenbox ui-corner-all" id="microsoft">
+        <p id="microsoftParagraph">Microsoft.</p>
+        <p><a href="www.microsoft.com" title="microsoft" id="microsoftLink">microsoft Link</a></p>
+    </div>
+    <br>
+    <div id="slider"></div>
+    <label for="slider">Value:</label>
+    <input type="text" id="sliderValue" readonly>
+    <br>
+    <div id="rangeSlider"></div>
+    <label for="rangeSlider">Value:</label>
+    <input type="text" id="rangeSliderValue" readonly>
+
+    
+    <!-- mulai js nya beraksi -->
+    <script>
+        $(function () { // block pembuka jQuery
+            
+            $("#slider").slider({
+                slide: function(event, ui){
+                    $("#sliderValue").val(ui.value);
+                },
+                min: 0,
+                max: 25
+            });
+            $("#slider").val(0);
+
+            $("#rangeSlider").slider({
+                range: true, // biar ada 2 titik yg digerakin
+                min: 0,
+                max: 100_000,
+                step: 1_000, // gerak setiap 1_000 saja
+                values: [0,10_000], // agar mulai tidak dari 0 - 0 (agar tidak membingungkan)
+                slide: function(event, ui){
+                    $("#rangeSliderValue").val(ui.values[0] + " miles - " + ui.values[1] + " miles")
+                }
+            });
+
+        }); // block penutup jQuery
+    </script>
+
+
+
+
+</body>
+
+</html>
