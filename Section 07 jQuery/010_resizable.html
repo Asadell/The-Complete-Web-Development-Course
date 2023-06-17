@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        Resizable
+    </title>
+    <style>
+        .bluebox {
+            background-color: #3A5795;
+            color: white;
+            height: 100px;
+            width: auto;
+        }
+
+        .yellowbox {
+            background-color: rgb(222, 224, 85);
+            height: 100px;
+            width: auto;
+        }
+
+        .greenbox {
+            background-color: #31af37;
+            height: 100px;
+            width: auto;
+        }
+
+        #great {
+            background-color: #5a3479;
+        }
+
+        #container{
+            border-style: dotted;
+            width: 400px;
+            height: 250px;
+        }
+    </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/blitzer/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+</head>
+
+<body>
+    <!-- another component -->
+    <div class="bluebox ui-corner-all" id="facebook">
+        <p>Facebook is <span id="great">great</span>.</p>
+    </div>
+    <br>
+    <div id="container">
+        <div class="yellowbox ui-corner-all" id="apple">
+            <p>Apple</p>
+        </div>
+    </div>
+    <br>
+    <div class="greenbox ui-corner-all" id="microsoft">
+        <p id="microsoftParagraph">Microsoft.</p>
+        <p><a href="www.microsoft.com" title="microsoft" id="microsoftLink">microsoft Link</a></p>
+    </div>
+    
+    
+    <!-- mulai js nya beraksi -->
+    <script>
+        $(function () { // block pembuka jQuery
+            $("#facebook").resizable({
+                maxHeight:200,
+                minHeight:50,
+                minWidth:100,
+                maxWidth:300,
+                aspectRatio:3/4,
+                //ghost:true,
+                alsoResize:"#microsoft"
+            });
+
+            $("#apple").resizable({
+                containment:"#container",
+                animate:true
+            });
+        }); // block penutup jQuery
+    </script>
+
+
+
+
+</body>
+
+</html>

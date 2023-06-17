@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        Accordion
+    </title>
+    <style>
+        .bluebox {
+            background-color: #3A5795;
+            color: white;
+            height: auto;
+            width: auto;
+        }
+
+        .yellowbox {
+            background-color: rgb(222, 224, 85);
+            height: 100px;
+            width: auto;
+        }
+
+        .greenbox {
+            background-color: #31af37;
+            height: 100px;
+            width: auto;
+        }
+
+        #great {
+            background-color: #5a3479;
+        }
+    </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+</head>
+
+<body>
+    <!-- another component -->
+
+    <div id="resizer" class=".ui-widget-content">
+        <div class="bluebox ui-corner-all" id="facebook">
+            <h3>Section 1</h3>
+            <div>
+                <p>Content 1</p>
+                <p>Content 1</p>
+                <p>Content 1</p>
+                <p>Content 1</p>
+                <p>Content 1</p>
+                <p>Content 1</p>
+                <p>Content 1</p>
+            </div>
+            <h3>Section 2</h3>
+            <div><p>Content 2</p></div>
+            <h3>Section 3</h3>
+            <div><p>Content 3</p></div>
+        </div>
+    </div>
+    
+    <br>
+    <div class="yellowbox ui-corner-all" id="apple">
+        <p>kitaaa</p>
+    </div>
+    <br>
+    <div class="greenbox ui-corner-all" id="microsoft">
+        <p id="microsoftParagraph">Microsoft.</p>
+        <p><a href="www.microsoft.com" title="microsoft" id="microsoftLink">microsoft Link</a></p>
+    </div>
+    
+    
+    <!-- mulai js nya beraksi -->
+    <script>
+        $(function () { // block pembuka jQuery
+            
+            $("#facebook").accordion({
+                // jadi bisa nutup 
+                collapsible:true,
+
+                // perbagus iconnya 'https://jqueryui.com/themeroller/'
+                icons: {
+                    header: "ui-icon-circle-arrow-e",
+                    activeHeader: "ui-icon-circle-arrow-s"
+                },
+                // agar saat kebuka, size height nya sesuai content nya
+                heightSize:"content"
+            });
+
+            $("#resizer").resizable({
+                resize: function () {
+                    $("#facebook").accordion("refresh");
+                }
+            });
+
+        }); // block penutup jQuery
+    </script>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        Auto Complete
+    </title>
+    <style>
+        .bluebox {
+            background-color: #3A5795;
+            color: white;
+            height: 100px;
+            width: auto;
+        }
+
+        .yellowbox {
+            background-color: rgb(222, 224, 85);
+            height: 100px;
+            width: auto;
+        }
+
+        .greenbox {
+            background-color: #31af37;
+            height: 100px;
+            width: auto;
+        }
+
+        #great {
+            background-color: #5a3479;
+        }
+
+        .ui-autocomplete{
+            max-height: 100px;
+            overflow-y: auto;
+            overflow-x: auto;
+            max-width: 200px;
+        }
+        #city{
+            width: 200px;
+        }
+    </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+</head>
+
+<body>
+    <!-- another component -->
+    <div class="bluebox ui-corner-all" id="facebook">
+        <p>Facebook is <span id="great">great</span>.</p>
+        <p>Enter your city: <input type="text" id="city"></p>
+    </div>
+    <br>
+    <div class="yellowbox ui-corner-all" id="apple">
+        <p>Apple</p>
+    </div>
+    <br>
+    <div class="greenbox ui-corner-all" id="microsoft">
+        <p id="microsoftParagraph">Microsoft.</p>
+        <p><a href="www.microsoft.com" title="microsoft" id="microsoftLink">microsoft Link</a></p>
+    </div>
+    
+    
+    <!-- mulai js nya beraksi -->
+    <script>
+        $(function () { // block pembuka jQuery
+            
+            $("#city").autocomplete({
+                source: ["Jakarta", "Surabaya", "Bandung", "Medan", "Semarang", "Makassar", "Palembang", "Tangerang", "Depok", "Batam", "Bekasi", "Pekanbaru", "Bandar Lampung", "Malang", "Padang", "Denpasar", "Samarinda", "Bogor", "Mataram", "Pontianak"]
+            });
+
+        }); // block penutup jQuery
+    </script>
+
+
+
+
+</body>
+
+</html>
